@@ -1,0 +1,63 @@
+body, h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+.posts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.post {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    width: 100%;
+    padding: 20px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.post:hover {
+    transform: translateY(-10px);
+}
+
+.post h1 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.post h1 a {
+    text-decoration: none;
+    color: #333;
+}
+
+.post h1 a:hover {
+    text-decoration: underline;
+}
+
+.post p {
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.post h3 {
+    font-size: 0.9em;
+    color: #999;
+    text-align: right;
+}
+
+@media (max-width: 600px) {
+    .post {
+        max-width: 100%;
+    }
+}
