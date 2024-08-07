@@ -1,21 +1,13 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>post_home</title>
-    <link rel="stylesheet" href="{% static 'styles.css' %}" />
-  </head>
-  <body>
+{% extends 'base.html' %}
+
+{% block content %}
     <div class="posts">
       {% for post in posts %}
       <div class="post">
-        <h1><a href="#">{{ post.title }}</a></h1>
+        <h1><a href="{% url "post_content" slug=post.slug %}">{{ post.title }}</a></h1>
         <p>{{ post.snippet }}</p>
         <h3>{{ post.date }}</h3>
       </div>
       {% endfor %}
     </div>
-  </body>
-</html>
+{% endblock %}
