@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="create-new">
+     <h1>Add New Post</h1>>
+      <div class="post">
+        <form class="create-form" action="/posts/create/" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{form}}
+            <input type="submit" value="create">
+
+      </div>
+    
+    </div>
+{% endblock %}
