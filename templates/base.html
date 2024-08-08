@@ -12,12 +12,19 @@
     <h1><a href="{% url "post_home" %}">POSTS</a></h1>
     <nav>
       <ul>
+        {% if user.is_authenticated %}
         <li>
           <form class="logout-link" action="/accounts/logout/" method="post">
             {% csrf_token %}
         
 <button type="submit">Logout</button>        </form>  
         </li>
+        <li><a href="{% url "post_create" %}">Add New</a></li>
+
+        {% else %}
+        <li><a href="{% url "login_page" %}">Login</a></li>
+        <li><a href="{% url "signup_page" %}">Sign Up</a></li>
+        {% endif %}
       </ul>
     </nav>
     {% block content %}
